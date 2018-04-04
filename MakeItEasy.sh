@@ -33,6 +33,35 @@ case $choice in
      	esac
    ;;
 2) echo "search"
+	echo "1.grep commands"
+	read -p "Enter your choice " choice2
+	case $choice2 in
+	1)
+	    echo "1.Search for a string in a given string"
+	    echo  "2.Search for a string in multiple files"
+	    echo   "3.Case insensitive search"
+	    echo "4.Searching for full words not substrings"
+	    echo "5.Highlighting the search using grep options"
+	    echo "6.Search in all files recursively."
+	    echo "7.invert match"
+		 read -p "Enter your choice of grep commands" choice1
+		 read -p "Enter string to match " str
+		case $choice1 in 
+		1) 
+		   read -p "Enter file name" fname	
+			grep $str $fname
+			;;
+		2) read -p "Enter a file pattern to search the given string " pname
+			grep $str $pname
+			;;
+                3) read -p "Enter a file pattern to search the given string " pname
+			grep -i $str $pname
+			;;
+		esac 
+		
+	    
+	   ;;
+	esac
    ;;
 3) echo "1.List all processes"
    echo "2.List only zombie processes"
